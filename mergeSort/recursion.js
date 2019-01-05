@@ -13,18 +13,12 @@ function mergeSort(inputArr=[]){
         mergeSort(leftArr);
         mergeSort(rightArr);//分别处理两子数组排序
         while (leftArr.length || rightArr.length) {//将子数组合并还原排序后原数组
-            leftItem = leftArr.shift();
-            rightItem = rightArr.shift();
-            if (!leftItem) {
-                inputArr.push(rightItem);
-            } else if (!rightItem) {
-                inputArr.push(leftItem);
-            } else if (rightItem < leftItem) {
-                inputArr.push(rightItem);
-                leftArr.unshift(leftItem);
+            if (!leftArr[0]||rightArr[0] < leftArr[0]) {
+                inputArr.push(rightArr[0]);
+                rightArr.shift();
             } else {
-                inputArr.push(leftItem);
-                rightArr.unshift(rightItem);
+                inputArr.push(leftArr[0]);
+                leftArr.shift();
             }
         }
     }
