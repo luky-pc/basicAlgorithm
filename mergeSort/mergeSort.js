@@ -10,7 +10,7 @@
  * @returns {*}
  */
 function mergeSort(inputArr=[]){
-    let temArr=inputArr.map((item)=>{return [item]}),excessiveArr,childArr=[],index,
+    let temArr=inputArr.map((item)=>{return [item]}),transitionArr,childArr=[],index,
     join=(firstArr=[],secondArr=[])=>{
         let result=[];
         while(firstArr.length||secondArr.length){
@@ -25,11 +25,11 @@ function mergeSort(inputArr=[]){
         return result;
     };
     while(temArr.length>1){
-        excessiveArr=[...temArr];
+        transitionArr=[...temArr];
         temArr=[];
         index=0;
-        while(index<excessiveArr.length){
-            childArr=join(excessiveArr[index],excessiveArr[index+1]);
+        while(index<transitionArr.length){
+            childArr=join(transitionArr[index],transitionArr[index+1]);
             temArr.push(childArr);
             index+=2;
         }
