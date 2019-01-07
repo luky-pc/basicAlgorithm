@@ -34,11 +34,7 @@ function recursionPreOrder(tree){
     preOrder(tree);
     return orderArr;
 }
-
-let scr=document.createElement("script");
-scr.src="./traversalOfBinaryTree/basicData.js";
-scr.onload=function(){
+requestJs(["./traversalOfBinaryTree/basicData.js"]).then(()=>{
     console.log("非递归访问结果 " + preOrder(tree));
     console.log("递归访问结果   " + recursionPreOrder(tree));
-};
-document.body.appendChild(scr);
+});
