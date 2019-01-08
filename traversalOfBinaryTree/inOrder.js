@@ -39,12 +39,12 @@ function inOrder(tree){
  * @returns {Array} 返回访问结果
  */
 function recursionInOrder(tree){
-    let orderArr=[],preOrder=(tree)=>{
-        tree.left&&preOrder(tree.left);
+    let orderArr=[],inOrder=(tree)=>{
+        tree.left&&inOrder(tree.left);
         orderArr.push(tree.value);
-        tree.right&&preOrder(tree.right);
+        tree.right&&inOrder(tree.right);
     };
-    preOrder(tree);
+    inOrder(tree);
     return orderArr;
 }
 requestJs(["./traversalOfBinaryTree/basicData.js"]).then(()=>{
