@@ -49,4 +49,4 @@ function recursionQuickSort(inputArr,start,end){
 
 let arr=[19,2,1,4,7,20,30,21,18,17,24,25];
 console.log("递归排序结果："+recursionQuickSort(arr,0,arr.length-1));
-console.log("非递归排序结果："+quickSort(arr,0,arr.length-1));
+console.log("非递归排序结果："+quickSort(arr));
